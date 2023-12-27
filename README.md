@@ -2,5 +2,5 @@ I'm doing mainly exercises from https://rust-book.cs.brown.edu/ which is upgrade
 
 Curently moving to chapter 9.
 
-It is on CC BY 4.0 license, author M-Maciej https://github.com/M-Maciej
+It is on CC-BY-4.0 license, author M-Maciej https://github.com/M-Maciej
 https://creativecommons.org/licenses/by-sa/4.0/legalcode.txt
