@@ -1,4 +1,3 @@
-mod encoding_ver_1;
 fn main() {
     let mut x: Box<i32> = Box::new(-1);
     let x_abs1 = i32::abs(*x); // explicit dereference
@@ -29,33 +28,10 @@ fn main() {
     println!("{x}");
     println!("przerwa");
 
-    println!("{}", encoding_ver_1::num_decodings("2101"));
-    println!("{}", num_decodings("2101".to_string()));
-
     let array = [1, 2, 3, 4, 5];
     let mut iterator = array.iter();
 
     while let Some(item) = iterator.next() {
         println!("Item: {}", item);
     }
-}
-
-fn num_decodings(s: String) -> i32 {
-    s.chars()
-        .enumerate()
-        .fold([1, 0], |a, (i, c)| {
-            [
-                if c != '0' { a[0] + a[1] } else { 0 },
-                if i > 0
-                    && (s.chars().nth(i - 1) == Some('1')
-                        || (s.chars().nth(i - 1) == Some('2') && c < '7'))
-                {
-                    a[0]
-                } else {
-                    0
-                },
-            ]
-        })
-        .iter()
-        .sum()
 }
