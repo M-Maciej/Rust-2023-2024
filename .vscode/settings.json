@@ -1,0 +1,5 @@
+{
+  "rust-analyzer.linkedProjects": [
+    ".\\cs_brown_book\\adder\\Cargo.toml"
+  ]
+}
