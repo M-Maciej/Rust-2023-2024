@@ -1,8 +1,13 @@
-[package]
-name = "cs_brown_book"
-version = "0.1.0"
-edition = "2021"
+# Root Cargo.toml
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
-[dependencies]
+[workspace]
+members = [
+    "chapter_10",
+    "adder",
+    "chapter_3_tests",
+    "chapter_8_exercises",
+    "chapter_13",
+    "guessing_game",
+    "chapter_4_tests"
+]
+resolver = "2"

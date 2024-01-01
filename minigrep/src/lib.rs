@@ -1,20 +1,29 @@
 use std::env;
 use std::error::Error;
 use std::fs;
-pub struct Config<'a> {
-    pub query: &'a str,
-    pub file_path: &'a str,
+
+pub struct Config {
+    pub query: String,
+    pub file_path: String,
     pub ignore_case: bool,
 }
-impl<'a> Config<'a> {
-    pub fn new(args: &'a [String]) -> Result<Self, &'static str> {
-        if args.len() < 3 {
-            return Err("not enough arguments");
-        }
-        // `unwrap()` will panic if the argument is not provided
-        let query = args.get(1).unwrap();
-        let file_path = args.get(2).unwrap();
+
+impl Config {
+    pub fn new(mut args: impl Iterator<Item = String>) -> Result<Self, &'static str> {
+        args.next(); // Skip the first argument (program name)
+
+        let query = match args.next() {
+            Some(arg) => arg,
+            None => return Err("Didn't get a query string"),
+        };
+
+        let file_path = match args.next() {
+            Some(arg) => arg,
+            None => return Err("Didn't get a file path"),
+        };
+
         let ignore_case = env::var("IGNORE_CASE").is_ok();
+
         Ok(Config {
             query,
             file_path,
@@ -22,6 +31,7 @@ impl<'a> Config<'a> {
         })
     }
 }
+
 pub fn search<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
     contents
         .lines()
