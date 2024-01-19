@@ -1,5 +1,8 @@
 {
   "rust-analyzer.linkedProjects": [
-    ".\\cs_brown_book\\adder\\Cargo.toml"
-  ]
+    ".\\cs_brown_book\\adder\\Cargo.toml",
+    ".\\cs_brown_book\\hello_macro\\hello_macro_derive\\Cargo.toml",
+    ".\\cs_brown_book\\hello_macro_derive\\Cargo.toml"
+  ],
+  "rust-analyzer.showUnlinkedFileNotification": false
 }

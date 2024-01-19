@@ -8,6 +8,10 @@ members = [
     "chapter_8_exercises",
     "chapter_13",
     "guessing_game",
-    "chapter_4_tests"
+    "chapter_4_tests",
+    "chapter_15",
+    "chapter_19",
+    "hello_macro",
+    "hello_macro_derive",
 ]
 resolver = "2"
